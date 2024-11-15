@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
 export const sendEmail = async () => {
     try {
 
-        const [result] = await pool.query("SELECT Email FROM Clients");
+        const [result] = await pool.query("SELECT Name,Email FROM Clients");
 
 
         if (result.length === 0) {
@@ -30,7 +30,7 @@ export const sendEmail = async () => {
 
 Message Body :
 
-Hello [Name],
+Hello ${client.Name},
 
 We hope you're having a great day! In this edition of our newsletter, we bring you some exciting news and offers you won’t want to miss:
 
