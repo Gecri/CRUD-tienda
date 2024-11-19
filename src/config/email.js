@@ -23,12 +23,10 @@ export const sendEmail = async () => {
 
         for (const client of result) {
             const mailOptions = {
-                from: 'widgethubsocial@gmail.com',
+                from:'widgethubsocial@gmail.com',
                 to: client.Email,
-                subject: 'Prueba de Envío Automático',
+                subject: `hi ${client.Name}, this is an Automatic Sending Test`,
                 text: `News and Exclusive Offers Just for You!
-
-Message Body :
 
 Hello ${client.Name},
 
